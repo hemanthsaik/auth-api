@@ -1,4 +1,5 @@
 const express = require("express");
+const PORT = process.env.PORT || 3002
 
 const app = express();
 const mongoose = require("mongoose");
@@ -20,4 +21,4 @@ app.use(express.json());
 app.use("/api/user", authRouter);
 app.use("/api/posts", postRouter);
 
-app.listen(3000, () => console.log("Server Up and running"));
+app.listen(PORT, () => console.log(`"Server Up and running on port ${PORT}"`));
